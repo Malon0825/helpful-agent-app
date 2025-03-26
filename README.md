@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# AI Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive chat application for AI agent interaction with a sleek UI and smooth animations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design** - Optimized for mobile, tablet, and desktop screens
+- **Conversation Management** - Switch between multiple chat conversations
+- **Theme Customization** - Change the accent color to personalize your experience
+- **Smooth Animations** - Enjoy fluid transitions and message animations
+- **API Integration** - Connects to a .NET 8 backend
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**:
+  - React 18+
+  - TypeScript
+  - Tailwind CSS
+  - Vite
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Backend** (separate repository):
+  - .NET 8
+  - API endpoints for chat interaction
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to the project directory
+cd ai-chat-app
+
+# Install dependencies
+npm install
+# or
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# Start the development server
+npm run dev
+# or
+yarn dev
 ```
+
+Visit `http://localhost:5173` in your browser to see the app.
+
+### Building for Production
+
+```bash
+# Build the app
+npm run build
+# or
+yarn build
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Chat/              # Chat-related components
+│   ├── Common/            # Reusable UI components
+│   ├── Layout/            # Layout components
+│   └── Sidebar/           # Sidebar components
+├── context/               # React context providers
+├── hooks/                 # Custom React hooks
+├── types/                 # TypeScript type definitions
+├── utils/                 # Utility functions
+└── assets/                # Static assets
+```
+
+## Customization
+
+- **Theme**: Modify the accent color through the user interface
+- **Animations**: Animation settings can be adjusted in `tailwind.config.js`
+
+## License
+
+[MIT License](LICENSE)
